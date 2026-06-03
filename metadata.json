@@ -1,0 +1,6 @@
+{
+  "name": "いけ！こうきナイト！〜まおうを やっつけろ〜",
+  "description": "こうげきボタンやモンスターをタップして、まおうをたおす簡単爽快バトルRPGゲーム！あつめたコインでぶきやなかまをパワーアップしよう！",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
