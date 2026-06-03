@@ -722,9 +722,9 @@ export default function App() {
   const compData = getCompanionInfo(companionLevel);
 
   return (
-    <div id="game-portal" className="w-full h-screen flex justify-center items-center bg-slate-950 font-sans text-white overflow-hidden select-none">
+    <div id="game-portal" className="w-full h-dvh flex justify-center items-center bg-slate-950 font-sans text-white overflow-hidden select-none">
       {/* スマホ縦持ちに絶対最適化されたコンテナ */}
-      <div className="relative w-full max-w-md h-full flex flex-col justify-between p-3.5 bg-gradient-to-b from-indigo-950 via-slate-900 to-purple-950 overflow-hidden shadow-2xl relative border-x border-indigo-500/20">
+      <div className="relative w-full max-w-md h-full flex flex-col justify-between p-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] bg-gradient-to-b from-indigo-950 via-slate-900 to-purple-950 overflow-hidden shadow-2xl border-x border-indigo-500/20">
         
         {/* レトロなきらきら星背景 */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-25 z-0">
@@ -801,7 +801,7 @@ export default function App() {
           {/* ボグラウンド窓フレーム：魔王ステージなら禍々しく不気味に */}
           <div
             id="monster-zone"
-            className={`w-full max-w-xs aspect-square p-4 rounded-3xl bg-gradient-to-b ${currentMonster.bg} border-4 ${
+            className={`w-full max-w-xs aspect-square max-h-[33dvh] p-4 rounded-3xl bg-gradient-to-b ${currentMonster.bg} border-4 ${
               currentMonster.isBoss ? "border-rose-600 shadow-[0_0_20px_rgba(220,38,38,0.5)] animate-pulse" : "border-indigo-400/30"
             } relative flex flex-col justify-between items-center overflow-hidden transition-all duration-500`}
           >
