@@ -312,10 +312,11 @@ export default function App() {
 
     // ループ（周回）ごとにHPと報酬コインを大幅にインフレさせる
     const hpMultiplier = Math.pow(2.8, loop);
-    const goldMultiplier = Math.pow(2.4, loop);
+    const goldMultiplier = Math.pow(10, loop);
+    const baseBonus = loop > 0 ? Math.round(8000 * Math.pow(5, loop - 1)) : 0;
 
     const maxHp = Math.round(base.baseHp * hpMultiplier);
-    const reward = Math.round(base.reward * goldMultiplier);
+    const reward = Math.round(base.reward * goldMultiplier + baseBonus);
 
     let name = base.name;
     let emoji = base.emoji;
