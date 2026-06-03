@@ -801,7 +801,7 @@ export default function App() {
           {/* ボグラウンド窓フレーム：魔王ステージなら禍々しく不気味に */}
           <div
             id="monster-zone"
-            className={`w-full max-w-xs aspect-square max-h-[33dvh] p-4 rounded-3xl bg-gradient-to-b ${currentMonster.bg} border-4 ${
+            className={`w-full max-w-sm aspect-square max-h-[46dvh] p-4 rounded-3xl bg-gradient-to-b ${currentMonster.bg} border-4 ${
               currentMonster.isBoss ? "border-rose-600 shadow-[0_0_20px_rgba(220,38,38,0.5)] animate-pulse" : "border-indigo-400/30"
             } relative flex flex-col justify-between items-center overflow-hidden transition-all duration-500`}
           >
@@ -835,7 +835,7 @@ export default function App() {
 
               {/* モンスター本体 */}
               <div
-                className={`text-7xl sm:text-8xl select-none filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.6)] flex items-center justify-center transform active:scale-90 transition-transform ${
+                className={`text-8xl sm:text-9xl select-none filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.6)] flex items-center justify-center transform active:scale-90 transition-transform ${
                   shaking ? "shake-enemy" : ""
                 } ${defeated ? "scale-50 opacity-40 blur-[1px] transition-all duration-300" : ""}`}
               >
@@ -924,24 +924,6 @@ export default function App() {
         </div>
 
         {/* ==========================================
-            💥 どデカい「こうげき」ボタン (中央・下部中間)
-            ========================================== */}
-        <div className="z-10 py-1 flex justify-center items-center">
-          <button
-            id="btn-attack-huge"
-            onClick={() => handleTapAttack()}
-            disabled={defeated}
-            className={`w-full max-w-xs py-3.5 px-6 rounded-2xl text-xl font-display tracking-widest text-slate-950 font-black flex items-center justify-center gap-2 transform active:translate-y-1 transition-all duration-75 select-none ${
-              defeated
-                ? "bg-slate-700 text-slate-500 cursor-not-allowed border-b-0"
-                : "bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 hover:from-yellow-300 hover:to-amber-300 border-b-[5px] border-amber-600 active:border-b-0 shadow-[0_4px_12px_rgba(245,158,11,0.4)] animate-pulse"
-            }`}
-          >
-            <Sword size={24} className="animate-bounce" /> こうげきする ⚔️
-          </button>
-        </div>
-
-        {/* ==========================================
             🛒 お店（パワーアップ）セクション (下部固定)
             ========================================== */}
         <div className="z-10 bg-slate-950/80 backdrop-blur-md rounded-2xl p-2.5 border border-indigo-500/20 shadow-xl">
@@ -954,7 +936,7 @@ export default function App() {
             </span>
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-1.5 max-h-[125px] overflow-y-auto pr-1 scrollbar-thin">
             
             {/* アイテム1: ぶきをつよくする */}
             <div className="flex items-center justify-between bg-slate-900/90 hover:bg-slate-800/60 p-1.5 rounded-xl border border-indigo-500/10 transition-colors">
